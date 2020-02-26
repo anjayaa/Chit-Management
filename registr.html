@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+	<table width="356" height="74" align="center">
+		<tr>
+			<td height="68" colspan="2" align="center" > <h1> Register Here</h1> </td></tr>
+
+			<tr><td width="200" height="43" align="center">Name in full(in Block Letters):</td>
+			<td width="181"><input type="text" name="Name" placeholder="Name" required></td></tr>
+			<tr><td width="200" height="43" align="center">Address:</td>
+			<td><textarea name="Add"></textarea></td></tr>
+			<tr><td> Gender</td><td> <input type="radio" name="Gender" value="Male">Male</td>
+				<td> <input type="radio" name="Gender" value="Female">Female</td></tr>
+
+			<tr><td width="200" height="43" align="center">Occupation</td>
+			<td width="181"><input type="text" name="Occup"  required="Occupation"></td></tr>
+			<tr><td width="200" height="43" align="center">Account Number:</td>
+			<td width="181"><input type="text" name="accno" placeholder="AccountNumber" required></td></tr>
+                <tr><td width="200" height="43" align="center">IFSC Code:</td>
+                <td width="181"><input type="text" name="ifsc"  required=" IFSC Code"></td></tr>
+        <tr><td width="200" height="43" align="center">Aadhar Number:</td>
+                <td width="181"><input type="text" name="aadhar"  required></td></tr>
+                <tr><td width="200" height="43" align="center">Mobile Number:</td>
+                <td width="181"><input type="text" name="number" placeholder="phoneNumber" required=" phoneNumber"></td></tr>
+                <
+			<tr><td width="200" height="43" align="center">Email:</td>
+			<td width="181"><input type="email" name="email" placeholder="Email" required=></td></tr>
+			<tr><td width="200" height="43" align="center">Password:</td>
+			<td width="181"><input type="Password" name="pass" placeholder="Password" required=></td></tr>
+			<tr><td width="200" height="43" align="center">ConfirmPassword:</td>
+			<td width="181"><input type="Password" name="pass" placeholder="ConfirmPassword" required=></td></tr>
+
+			<tr><td width="200" height="43" align="center">Nominee Name:</td>
+			<td width="181"><input type="Name" name="nName"  required="name"></td></tr>
+			
+			<tr><td width="200" height="43" align="center">Address:</td>
+			<td><textarea name="add"></textarea></td></tr>
+			<tr><td width="200" height="43" align="center">Relationship:</td>
+			<td width="181"><input type="text" name="relation" ></td></tr>
+			
+			
+
+
+			<tr align="center"><td height="68"><input type="submit"  value="Register" ></td>
+
+</table>
+</form>		
+</body>
+</html>

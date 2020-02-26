@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registerd Users</title>
+</head>
+<body>
+<form>
+	<table border="2" align="center" width="400">
+	<tr>
+		<td>U_id</td>
+        <td>Name</td>
+        <td>Address</td>
+		<td>Gender</td>
+		<td>Occupation</td>
+		<td>Account Number</td>
+        <td>IFSC Code</td>
+        <td>Aadhar Number</td>
+		<td>Mobile Number</td>
+		<td>Email_ID</td>
+		<td> Nominee Name</td>
+		<td>Address</td>
+		<td>Relationship</td>
+		
+	</tr>
+
+         {% if objval %}
+        {% for ob in objval %}
+        <tr>
+            <td>{{ ob.u_id }}</td>
+            <td>{{ ob.name }}</td>
+            <td>{{ ob.address }}</td>
+            <td>{{ ob.gender }}</td>
+            <td>{{ ob.occupation }}</td>
+            <td>{{ ob.accountnumber }}</td>
+            <td>{{ ob.ifsccode }}</td>
+            <td>{{ ob.aadharnumber }}</td>
+            <td>{{ ob.mobilenumber }}</td>
+            <td>{{ ob.email }}</td>
+            <td>{{ ob.nomineename }}</td>
+            <td>{{ ob.address}}</td>
+            <td>{{ ob.relationship }}</td>
+
+
+
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+</table>
+</form>
+</body>
+</html>
