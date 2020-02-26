@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select Chit</title>
+</head>
+<body>
+	<form method="post">
+         {% csrf_token %}
+	<table width="356" height="74" align="center">
+			<tr>
+			<td height="68" colspan="2" align="center" > <h1> Chit Details</h1> </td></tr>
+			
+			<tr><td width="200" height="43" align="center">CHIT NAME</td>
+			<td width="181"><input type="text" name="name" value="{{ objval.c_name }}"></td></tr>
+            <tr><td width="200" height="43" align="center">AMOUNT</td>
+			<td width="181"><input type="text" name="aamount" value="{{ objval.amount }}"></td></tr>
+            <tr><td width="200" height="43" align="center">FIRST INSTALLMENT</td>
+			<td width="181"><input type="text" name="amount"value="{{ objval.monthly_pay_amount }}"></td></tr>
+            <tr><td width="200" height="43" align="center">DURATION</td>
+			<td width="181"><input type="text" name="id"value="{{ objval.duration }}"></td></tr>
+            <tr><td width="200" height="43" align="center">TYPE</td>
+                <td><select name="type"><option value=""> Select </option>
+                    <option value="lot"> Lot </option>
+                    <option value="Auction"> Auction </option>
+                </select></td>
+
+			<tr align="center"><td height="68" colspan="2"><input type="submit" name="f" value="REQUEST" ></td>
+
+
+
+
+
+
+</table>
+</form>	
+
+</body>
+</html>

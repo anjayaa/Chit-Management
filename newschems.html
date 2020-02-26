@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Scheme</title>
+</head>
+<body>
+	<form>
+	<table border="2" align="center" width="400">
+	<tr>
+		<td>CHIT NAME:</td>
+        <td>CHIT VALUE</td>
+		<td>FIRST INSTALLMENT</td>
+        <td>DURATION</td>
+
+
+
+		
+	</tr>
+
+
+        {% if objval %}
+        {% for ob in objval %}
+        <tr>
+            <td>{{ ob.c_name }}</td>
+            <td>{{ ob.amount }}</td>
+            <td>{{ ob.monthly_pay_amount }}</td>
+            <td>{{ ob.duration }}</td>
+
+        <td>
+            <a href="{% url 'sendrequest1' idd=ob.c_id %}"> forword</a>
+        </td>
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+</table>
+</form>
+</body>
+</html>

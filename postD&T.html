@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post Date and Time</title>
+</head>
+<body>
+<form>
+	<table border="1" align="center" width="400">
+	<tr>
+		<td>Chit Name</td>
+		<td>Amount</td>
+		<td>Date</td>
+		<td>Time</td>
+	</tr>
+        {% if objval %}
+        {% for ob in objval %}
+        <tr>
+
+            <td>{{ ob.c_name }}</td>
+            <td>{{ ob.amount }}</td>
+            <td>{{ ob.s_date }}</td>
+            <td>{{ ob.time }}</td>
+
+
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+</table>
+</form>
+</body>
+</html>
