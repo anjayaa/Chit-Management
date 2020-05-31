@@ -1,4 +1,4 @@
-{% extends 'temp/fagent.html' %}
+{% extends 'temp/user.html' %}
 {% block admin %}
     <style>
     table {
@@ -9,26 +9,17 @@
     th, td {
         padding: 8px;
         text-align: center;
-
         border-bottom: 1px solid #DDDDDD;
     }
     tr:hover {background-color: #f5f5f5}
-
     </style>
-
-<form>
-	<table width="356" height="74" align="center">
-		<tr>
-			<td height="68" colspan="2" align="center" > <h1> RESULT</h1> </td></tr>
-
-		
-		<tr>
-            <td bgcolor="#ffe4e1"> <h3>USER NAME</h3></td>
-	    <td bgcolor="#ffe4e1"> <h3>CHIT NAME </h3></td>
-	    <td bgcolor="#ffe4e1"> <h3>AMOUNT </h3></td>
-	    </tr>
-{{ objval.newwords }}
-
+	<form>
+	<table class="table-bordered" align="center" width="500"><caption> <h1> AUCTION </h1></caption>
+	<tr>
+        <td>AUCTION AMOUNT</td>
+        <td><input type="text" name="amt" required></td>
+    </tr>
+        <tr align="center"><td height="68" colspan="2"><input type="submit"  value="POST" ></td>
 </table>
 </form>
 {% endblock %}

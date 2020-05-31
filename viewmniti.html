@@ -1,0 +1,46 @@
+{% extends 'temp/user.html' %}
+{% block admin %}
+     <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #DDDDDD;
+
+
+    }
+    tr:hover {background-color: #f5f5f5}
+
+    </style>
+
+<form>
+    <table class="table-bordered dashboard" align="center" width="400"><caption> <h1><u>MONTHLY PAYMENT NOTIFICATION</u></h1></caption>
+
+	<tr>
+        <td bgcolor="#ffe4e1"><h3 align="center">CHITNAME</h3></td>
+		<td bgcolor="#ffe4e1"><h3> AMOUNT</h3></td>
+		<td bgcolor="#ffe4e1"><h3>DATE</h3></td>
+
+	</tr>
+        {% if objval %}
+        {% for ob in objval %}
+        <tr>
+
+            <td>{{ ob.5 }}</td>
+            <td>{{ ob.2 }}</td>
+            <td>{{ ob.3 }}</td>
+
+            <td>
+
+
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+</table>
+</form>
+{% endblock %}

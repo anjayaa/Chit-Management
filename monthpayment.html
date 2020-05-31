@@ -1,0 +1,51 @@
+{% extends 'temp/fagent.html' %}
+{% block admin %}
+     <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+        {#border-bottom: 1px solid #DDDDDD;#}
+    }
+    tr:hover {background-color: #f5f5f5}
+    </style>
+
+	<form method="post">
+    {% csrf_token %}
+
+	<table width="356" height="74" align="center"  >
+{% if objval1 %}
+        {% for ob1 in objval1 %}
+
+     <input type="text" name="times" value="{{ ob1.0 }}">
+
+
+        {% endfor %}
+        {% endif %}
+<tr><td><caption> <h1><u>MONTHLY PAYMENT</u></h1></caption></td></tr>
+            <tr>
+            <td height="68"align="center" > <h2>{{ msg }} USER </h2> </td>
+			<td ><select name="uid"  required>
+                <option value="">select</option>
+                 {% if objval %}
+        {% for ob in objval %}
+
+<option value="{{ ob.6 }}">{{ ob.7 }}|| {{ ob.6 }}</option>
+
+
+        {% endfor %}
+        {% endif %}
+                </select></td></tr>
+        <tr>
+            <td height="68"align="center" > <h2>{{ msg }}  AMOUNT</h2> </td>
+			<td ><input type="text" name="amount"  required></td></tr>
+			<tr align="center"><td height="68"><input type="submit" name="post" value="PAY" ></td></tr>
+
+			
+</table>			
+</form>
+{% endblock %}

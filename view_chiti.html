@@ -1,0 +1,50 @@
+{% extends 'temp/fagent.html' %}
+{% block admin %}
+     <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #DDDDDD;
+
+
+    }
+    tr:hover {background-color: #f5f5f5}
+
+    </style>
+
+<form>
+    <table class="table-bordered dashboard" align="center" width="400"><caption> <h1><u>MONTHLY PAYMENT DETAILS</u></h1></caption>
+    <caption> <h4><u>CHIT NAME</u></h4></caption>
+	<tr>
+        <td bgcolor="#ffe4e1"><h3 align="center">CHITNAME</h3></td>
+		<td bgcolor="#ffe4e1"><h3> AMOUNT</h3></td>
+		<td bgcolor="#ffe4e1"><h3>DATE</h3></td>
+		<td bgcolor="#ffe4e1"><h3>TIME</h3></td>
+	</tr>
+        {% if objval %}
+        {% for ob in objval %}
+        <tr>
+
+            <td>{{ ob.c_name }}</td>
+            <td>{{ ob.amount }}</td>
+            <td>{{ ob.s_date }}</td>
+            <td>{{ ob.time }}</td>
+            <td>
+{#            <a href="{% url 'postdateandtime' idd=ob.c_name %}"> Edit</a>#}
+                  <td><a href="{% url 'monthlypaydtails' idd=ob.c_id %}"><h4><u>View User Payment details/</u></h4></a>
+        <a href="{% url 'monthpayment' idd=ob.c_id %}"><h4><u> Monthly Pay </u></h4></a></td>
+            <td><a href="{% url 'monthlynoti' idd=ob.c_id %}"><h4><u>Monthly Payment Notification</u></h4></a></td>
+{#        </td>#}
+
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+</table>
+</form>
+{% endblock %}
