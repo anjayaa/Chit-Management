@@ -1,0 +1,18 @@
+{% extends 'temp/user.html' %}
+{% block admin %}
+<form method="post">
+	<table border="2" align="center" width="400">
+			<tr>
+			<td height="68" colspan="2" align="center" > <h1> Auction</h1> </td></tr>
+			
+			<tr>
+		<td>User Name</td>
+		<td>Amount</td></tr>
+		</table>
+			
+			<tr><td width="200" height="43" align="left">POST AMOUNT</td>
+			<td width="181"><input type="text" name="amount"></td></tr>
+			<tr align="left"><td height="68"><input type="submit" name="post" value="POST" ></td></tr>
+			
+</form>
+{% endblock %}
