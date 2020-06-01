@@ -1,0 +1,55 @@
+{% extends 'temp/fagent.html' %}
+{% block admin %}
+     <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+    th, td {
+        padding: 8px;
+        text-align: center;
+        {#border-bottom: 1px solid #DDDDDD;#}
+    }
+    tr:hover {background-color: #f5f5f5}
+    </style>
+    <h2>VERIFICATION</h2>
+</tr>
+    <table>
+     <td>AMOUNT</td>
+            <td>DATE</td>
+            <td>TIME</td>
+         {% if objval %}
+        {% for ob in objval %}
+
+        <tr>
+
+            <td>{{ ob.amount}}</td>
+            <td>{{ ob.date}}</td>
+            <td>{{ ob.time}}</td>
+        <td>{{ ob.status}}</td>
+
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+	<form method="post">
+    {% csrf_token %}
+	<table width="356" height="74" align="center"  >
+         <tr>
+            <td height="68"align="center" > <h2>{{ msg }} Document</h2> </td>
+			<td ><input type="text" name="document"  placeholder="Document" required></td></tr>
+
+{#            <tr>#}
+{#            <td height="68"align="center" > <h2>{{ msg }} ACCNO</h2> </td>#}
+{#			<td ><input type="text" name="acc"  placeholder="acc no" required></td></tr>#}
+{#         <tr>#}
+{#            <td height="68"align="center" > <h2>{{ msg }} AMOUNT</h2> </td>#}
+{#			<td ><input type="text" name="amount"  placeholder="EMOUNT" required></td></tr>#}
+			<tr align="center"><td height="68"><input type="submit" name="post" value="POST" ></td></tr>
+
+			
+</table>			
+</form>
+{% endblock %}
