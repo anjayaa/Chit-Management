@@ -50,6 +50,11 @@
 			<tr align="center"><td height="68"><input type="submit" name="post" value="POST" ></td></tr>
 
 			
-</table>			
+</table>
+    {% if messages %}
+            {% for messages in messages %}
+            {% if messages.tags %} <script>alert("{{ messages }}") </script>{% endif %}
+            {% endfor %}
+        {% endif %}
 </form>
 {% endblock %}
